@@ -8,5 +8,9 @@ public class GradStudent extends Student {
     public void goToClass() {
         System.out.println("*attends CS7200*");
     }
+
+    public String toString(){
+        return "" + super.getGpa();
+    }
     
 }
