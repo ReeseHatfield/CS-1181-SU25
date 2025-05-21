@@ -3,7 +3,7 @@ public abstract class Book {
     private String title;
 
 
-
+    // hypotheical constructor(String title, DDnumber)
 
     public abstract boolean checkOut();
 

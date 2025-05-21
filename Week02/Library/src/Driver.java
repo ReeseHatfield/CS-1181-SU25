@@ -6,7 +6,7 @@ public class Driver {
         Book b1 = new FictionBook(456.876, "Great Expectations", "Mark Twain");
         Book b2 = new NonFictionBook(19.345, "Twilight");
 
-        FictionBook b = new Book();
+        // FictionBook b = new Book();
         // high level = concrete on the right
         // high -> low = downcasting
         // low -> high = upcasting
