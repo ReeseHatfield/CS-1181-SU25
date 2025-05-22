@@ -3,8 +3,25 @@ public class NonFictionBook extends Book implements Chargeable{
     public NonFictionBook(double ddNumber, String title){
 
         
-        super.setDDNumber(ddNumber);
+        try{
+            super.setDDNumber(ddNumber);
+        }
+        catch (BadDDNumberException bddne){
+            System.out.println("something went");
+        }
         super.setTitle(title);
+    }
+
+    public NonFictionBook(NonFictionBook nfb){
+
+        try{
+            super.setDDNumber(nfb.getDDNumber());
+        }
+        catch (BadDDNumberException bddne){
+            System.out.println("something went");
+        }
+        super.setTitle(nfb.getTitle());
+
     }
 
     @Override

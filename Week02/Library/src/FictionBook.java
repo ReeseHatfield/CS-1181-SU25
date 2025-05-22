@@ -5,6 +5,7 @@ public class FictionBook extends Book implements Chargeable{
     public FictionBook(double ddNumber, String title, String author){
         super.setDDNumber(ddNumber);
         super.setTitle(title);
+        
 
         this.author = author;
     }
@@ -25,6 +26,11 @@ public class FictionBook extends Book implements Chargeable{
         }
 
         return 10;
+    }
+
+    @Override
+    public String toString() {
+        return super.toString() + " was written by " + this.author;
     }
 
     
