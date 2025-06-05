@@ -14,11 +14,11 @@ public class Driver{
 
         JPanel namePanel = new JPanel();
 
-            JLabel myLabel1 = new JLabel("Reese");
-            namePanel.add(myLabel1);
+        JLabel myLabel1 = new JLabel("Reese");
+        namePanel.add(myLabel1);
 
-            JLabel myLabel2 = new JLabel("Hatfield");
-            namePanel.add(myLabel2);
+        JLabel myLabel2 = new JLabel("Hatfield");
+        namePanel.add(myLabel2);
             
         root.add(namePanel);
 
