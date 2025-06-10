@@ -24,7 +24,20 @@ public class ToDo extends JFrame {
 
 
     private void initComponents(){
+        // add all of our stuff to our root
 
+        // textBox
+        // submitBtn
+
+        JTextArea textInput = new JTextArea();
+        this.root.add(textInput);
+
+        JButton btn = new JButton("Add ToDo Item");
+        btn.addActionListener((e) -> {
+            this.root.add(new ToDoItem(textInput.getText()));
+            this.root.revalidate();
+        });
+        this.root.add(btn);
 
     }
 }
