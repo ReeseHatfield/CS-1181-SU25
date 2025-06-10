@@ -1,3 +1,5 @@
+import java.awt.FlowLayout;
+
 import javax.swing.*;
 
 public class Driver{
@@ -10,6 +12,7 @@ public class Driver{
         // code to add it here
 
         JPanel root = new JPanel();
+        root.setLayout(new FlowLayout());
 
 
         JPanel namePanel = new JPanel();
@@ -66,7 +69,7 @@ public class Driver{
         myFrame.setVisible(true); 
         myFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         myFrame.setTitle("I changed the title");
-        myFrame.setResizable(false);
+        myFrame.setResizable(true);
 
     }
 }
