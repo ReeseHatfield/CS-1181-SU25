@@ -1,4 +1,7 @@
 import javax.swing.*;
+import java.awt.*;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 
 public class CustomFrame extends JFrame {
 
@@ -63,5 +66,8 @@ public class CustomFrame extends JFrame {
 
         t.setRepeats(true);
         t.start();
+
+
     }
+
 }
