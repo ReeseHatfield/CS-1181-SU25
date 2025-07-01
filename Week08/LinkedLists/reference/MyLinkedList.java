@@ -40,6 +40,28 @@ public class MyLinkedList<T> {
 
     }
 
+    public void insert(int index, T value) {
+        ListNode<T> newNode = new ListNode<>(value);
+    
+        if(index == 0) {
+            newNode.next = head;
+            head = newNode;
+            return;
+        }
+    
+        ListNode<T> current = head;
+        for(int i = 0; i < index - 1; i++) {
+            if(current == null) return;
+            current = current.next;
+        }
+    
+        if(current == null) return;
+    
+        newNode.next = current.next;
+        current.next = newNode;
+    }
+    
+
 
     public String toString() {
         String s = "[";
