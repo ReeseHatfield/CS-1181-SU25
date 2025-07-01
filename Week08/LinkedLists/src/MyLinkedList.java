@@ -51,11 +51,15 @@ public class MyLinkedList<T> {
     
         ListNode<T> current = head;
         for(int i = 0; i < index - 1; i++) {
-            if(current == null) return;
+            if(current == null){
+                return;
+            }
             current = current.next;
         }
     
-        if(current == null) return;
+        if(current == null) {
+            return;
+        }
     
         newNode.next = current.next;
         current.next = newNode;
