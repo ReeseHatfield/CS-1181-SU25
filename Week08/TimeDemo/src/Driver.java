@@ -8,6 +8,9 @@ public class Driver {
     public static void main(String[] args) {
 
 
+
+
+
         int numInsertions = 1_000_000;
         
         double timeTakenArrayList = timeInsertAtBegining(new ArrayList<String>(), numInsertions);
