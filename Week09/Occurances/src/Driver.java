@@ -1,112 +1,97 @@
 import java.util.HashMap;
 import java.util.Map;
 
-public class Driver {
-    public static void main(String[] args) {
-        // System.out.println(countOccurancesRecursive('z', "zhello worldszz"));
-
-        // System.out.println(fibonacci(1));
-        // System.out.println(fibonacci(2));
-        // System.out.println(fibonacci(3));
-        // System.out.println(fibonacci(4));
-        // System.out.println(fibonacci(5));
-        // System.out.println(fibonacci(6));
-        // System.out.println(fibonacci(7));
-        // System.out.println(fibonacci(8));
-
-
-
-        Map<Character, Integer> map = countOccurances('l', "hello world", new HashMap<>());
-
-        System.out.println(map);
-
-
-
-    }
-
-
-    public static int countOccurances(char targetChar, String searchMe) {
-        Map<Character, Integer> map = new HashMap<>();
-
-        // // init map to 0
-        // for(char c = 'a'; c < 'z'; c++){
-        //     map.put(c, 0);
-        // }
-
-        for(char c: searchMe.toCharArray()){
-            if(map.containsKey(c)){
-                int currentValue = map.get(c);
-
-                map.put(c, currentValue + 1);
-            }
-            else {
-                map.put(c, 1); // it has now shown up once lol 
-            }
-        }
+public class Driver extends Object{
+    public static void main(String[] args) throws Exception {
         
 
-        return map.get(targetChar);
+        // System.out.println(countOccurances('l', "hello world"));
+
+        // doThing();
+
+
+        // System.out.println(countOccurancesRecursive('l', "lllhello"));
+
+
+        System.out.println(fib(0));
+        System.out.println(fib(1));
+        System.out.println(fib(2));
+        System.out.println(fib(3));
+        System.out.println(fib(4));
+        System.out.println(fib(5));
+        System.out.println(fib(6));
+        System.out.println(fib(7));
+        System.out.println(fib(8));
+        System.out.println(fib(9));
+        System.out.println(fib(10));
+
+
+    }
+
+    // return the Nth fibonacci number
+    public static int fib(int n) {
+        // Base case
+        if(n == 0 || n == 1) {
+            return 1;
+        }
+
+        // simplify and combine
+        // add together values of two fibonacci number
+
+        return fib(n - 1) + fib(n - 2); 
 
     }
 
 
-    public static int countOccurancesRecursive(char targetChar, String searchMe){
+    public static int countOccurancesRecursive(char target, String searchMe){
 
-        // if there is nothing, I know that cant have a target
+        // base case to being the empty string
         if(searchMe.length() == 0) {
             return 0;
         }
 
-
-        if (searchMe.charAt(0) == targetChar) {
-            return 1 + countOccurancesRecursive(targetChar, searchMe.substring(1));
+        // we need to head towards the string being empty
+        if (searchMe.charAt(0) == target){
+            return 1 + countOccurancesRecursive(target, searchMe.substring(1));
         } else {
-            return 0 + countOccurancesRecursive(targetChar, searchMe.substring(1));
+            return 0 + countOccurancesRecursive(target, searchMe.substring(1));
         }
+
 
     }
 
 
+    // public static void doThing(){
+    //     // do stuff
 
-    public static int fibonacci(int n) {
-        if(n <= 1) {
-            return 1;
+    //     doThing();
+    // }
+
+
+    public static int countOccurances(char targetLetter, String searchMe) throws Exception {
+
+
+        Map<Character, Integer> map = new HashMap<>();
+
+        for(char currentChar: searchMe.toCharArray()){
+            if(map.containsKey(currentChar)){
+                int currentValue = map.get(currentChar);
+
+                map.put(currentChar, currentValue + 1);
+            }
+            else {
+                map.put(currentChar, 1);
+            }
+
         }
 
-        return fibonacci(n - 1) + fibonacci(n - 2);
-    }
+        System.out.println(map);
 
 
+        throw new Exception("oopsies");
 
-    public static Map<Character, Integer> countOccurances(char targetChar, String searchMe, Map<Character, Integer> map) {
-        // Map<Character, Integer> map = new HashMap<>();
-
-        // start with just char and String
-        // make the map, -> annoyed that it gets reset,
-        // pass it in as params
-
-        if(searchMe.length() == 0) {
-            return map;
-        }
-
-        
-        char c = searchMe.charAt(0);
-        if(map.containsKey(c)){
-            int currentValue = map.get(c);
-
-            map.put(c, currentValue + 1);
-        }
-        else {
-            map.put(c, 1); // it has now shown up once lol 
-        }
-        
-        map = countOccurances(targetChar, searchMe.substring(1), map);
-
-
-        return map;
+        // return map.get(targetLetter);
 
     }
-
-
-
 }
+
