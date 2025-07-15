@@ -18,6 +18,29 @@ public class LinkedList {
         tail = newItem;
     }
 
+    public void insert(String value, int index) {
+        insertHelper(value, index, head, 1);
+    }
+
+
+    private void insertHelper(String value, int index, Node current, int timesMoved){
+        if(index == timesMoved) {
+            // moving next values
+
+            Node newNode = new Node(value);
+            newNode.next = current.next;
+            current.next = newNode;
+
+        }
+
+        if (current.next != null){
+
+            insertHelper(value, index, current.next, timesMoved + 1);
+        }
+
+
+    }
+
     public void print() {
         Node current = head;
         while (current != null) {
@@ -26,28 +49,6 @@ public class LinkedList {
         }
     }
 
-    public void insertRec(String valueToInsert, int index) {
-        insertHelper(valueToInsert, index, this.head, 0);
-    }
-
-    private void insertHelper(
-        String valueToInsert,
-        int index,
-        Node current,
-        int timesMoved
-    ) {
-        if (timesMoved == index) {
-            // do insert stuff
-            Node newNode = new Node(valueToInsert);
-            newNode.next = current.next;
-
-            current.next = newNode;
-        }
-
-        if (current.next != null) {
-            insertHelper(valueToInsert, index, current.next, timesMoved + 1);
-        }
-    }
 
     class Node {
 
