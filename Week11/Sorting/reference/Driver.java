@@ -13,7 +13,7 @@ public class Driver {
         // partition the list with that midpoint
         ArrayList<Integer> left = new ArrayList<>(list.subList(0, mid));
         ArrayList<Integer> right = new ArrayList<>(
-            list.subList(mid, list.size())
+            list.subList    (mid, list.size())
         );
 
         // sort left a=and right
